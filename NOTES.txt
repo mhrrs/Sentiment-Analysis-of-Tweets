@@ -1,0 +1,16 @@
+### Understanding RNNs:
+1. **Sequence Problems Classification**: Break down your problem into one of the few types of sequence problems: Many-to-One, One-to-One, One-to-Many, and Many-to-Many (where the last input starts the first outputs).
+2. **LSTMs vs. RNNs**: LSTMs return a tuple, allowing for `out, (hidden, cell) = self.lstm(x)`, unlike `nn.RNN`. Be cautious about this difference.
+
+### Issues and Solutions:
+- **Learning Issue**: If the model doesn't seem to be learning, check your code for missing `model.train()` or other oversights.
+- **Model Structure Concerns**: 
+  - Consideration about hidden state: While GPT4 suggests not including hidden state as embedding incorporates it, this may require reevaluation.
+  - Incorporate the hidden state between calls, initializing them and adding them iteratively to the model.
+  - Understanding LSTM cells: They work by taking in the input and the hidden state to compute.
+
+### Application Insights:
+- **Model Performance**: The model's effectiveness was hindered due to the quality of the tweet data.
+
+### Conclusion:
+The sentiment analysis model using RNNs provided insights into sequence problem classification and LSTM functionality. However, challenges related to model learning and structure required careful consideration. Ultimately, the model's performance was limited by the quality of the data.
